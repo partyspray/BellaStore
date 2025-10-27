@@ -9,24 +9,51 @@ body{
 .header{
   display: flex;
   background: #0a0a0a;
+  
 }
 .header ,h1{
-  color: var(--gold-light);
-  padding: 5px;
-}
-.navbar ,ul ,li ,a{
+  color: var(--gold);
+  padding: 0px;
+  margin: 0px;
   display: flex;
-  list-style: none;
-  text-decoration: none;
+  justify-content: space-between;
   align-items: center;
-  padding: 4px;
-  color: var(--text-muted);
+  padding: 10px 10px;
 }
-.montg h1{
+.luxury-cart-icon {
+  font-size: 30px; /* حجم الأيقونة */
+  color: #FFD700; /* اللون الذهبي الفاخر (Gold) */
+  text-shadow: 
+        0 0 5px rgba(255, 215, 0, 0.5), /* لمعان خفيف */
+        0 0 10px rgba(255, 215, 0, 0.3);
+    transition: color 0.3s, text-shadow 0.3s; /* تأثير انتقال سلس */
+}
+
+.luxury-cart-icon:hover {
+    color: #FFEA92; /* لون أفتح عند المرور فوقه */
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8), /* زيادة اللمعان عند التفاعل */
+        0 0 20px rgba(255, 215, 0, 0.5);
+    cursor: pointer;
+}
+
+/* تنسيقات جديدة/معدلة لـ .montg */
+.montg {
+  /* لتمكين التوسيط العمودي والأفقي */
+  display: flex;
+  justify-content: center; /* توسيط أفقي */
+  align-items: center; /* توسيط عمودي */
+
+  /* يجب تحديد ارتفاع للحاوية لتوسيط العناصر عمودياً */
+  min-height: 20vh;
+  width: 100%; /* تأكد من أنها تأخذ العرض الكامل */
+}
+
+/* تعديل تنسيقات h1 داخل .montg */
+.montg h1 {
   color: black;
-  width:50%;
-  margin: auto;
 }
+
 /*========== Luxury Footer ==========*/
 :root {
   --footer-bg: #0a0a0a;
@@ -192,3 +219,70 @@ body{
 .buy-button:hover {
   background-color: #3e8e41;
 }
+/*========================*/
+/* 3. Circular Sections (Extra Small Size) */
+/*========================*/
+
+.circular-sections {
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start;
+    width: 100%;
+    max-width: 960px;
+    margin: 40px auto; 
+    text-align: center;
+    direction: rtl;
+}
+
+.section-item {
+    display: block; 
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    flex-basis: 90px; /* قاعدة عرض أصغر */
+    transition: transform 0.3s ease;
+}
+
+.section-item:hover {
+    transform: translateY(-2px); 
+}
+
+/* الحاوية الدائرية للصورة - تم تقليل الحجم إلى 60px */
+.circle-wrapper {
+    /* تم تقليل الحجم من 90px إلى 60px */
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; 
+    overflow: hidden; 
+    margin: 0 auto 5px auto; /* تقليل المسافة أسفل الدائرة */
+    border: 2px solid #ced4da; /* تقليل سمك الحدود */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+}
+
+.section-item:hover .circle-wrapper {
+    transform: scale(1.1); /* تأثير تكبير طفيف ليناسب الحجم الصغير */
+    border-color: var(--gold);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle-wrapper img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* تنسيق اسم القسم - تم تقليل حجم الخط قليلاً */
+.section-name {
+    margin-top: 5px;
+    font-size: 0.9em; /* حجم خط أصغر */
+    font-weight: 700;
+    color: #495057; 
+    transition: color 0.3s;
+}
+
+.section-item:hover .section-name {
+    color: var(--gold); 
+}
+
